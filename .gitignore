@@ -1,0 +1,12 @@
+.DS_Store
+*.bak*
+*.log
+.env
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+*.db
+*.sqlite*
+credentials.json
+auth.json

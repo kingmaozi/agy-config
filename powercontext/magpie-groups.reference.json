@@ -1,0 +1,61 @@
+{
+  "_comment": "Magpie 模型组路由参考（对应 T3 六大子智能体与 PowerContext 后台整理所需的 group/*）",
+  "groups": [
+    {
+      "id": "262k",
+      "purpose": "Explore 侦察子代理 + PowerContext 后台记忆提炼整理",
+      "routing": "order",
+      "members": [
+        "devin/swe-2:max",
+        "devin/swe-2-flash:max",
+        "codex/gpt-6-luna:max"
+      ]
+    },
+    {
+      "id": "code",
+      "purpose": "Lin · code 后端主力实现子代理",
+      "routing": "order",
+      "context": 872000,
+      "members": [
+        "zcode/GLM-5.3-Flash:max",
+        "group/auto-deepseek-v4-1-flash",
+        "devin/claude-haiku-5-5:max",
+        "factory/claude-haiku-5-5:max",
+        "factory/glm-5.3-flash:max"
+      ]
+    },
+    {
+      "id": "code-reivew",
+      "purpose": "code-review 独立只读审查子代理（注意拼写保持 code-reivew 与路由规则一致）",
+      "routing": "order",
+      "context": 500000,
+      "members": [
+        "codex/gpt-6.1-terra:high",
+        "factory/claude-haiku-5-5:max"
+      ]
+    },
+    {
+      "id": "code-pro",
+      "purpose": "高难备用组（当前资深 code-pro 与 Rigel 直接指定 codex/gpt-6.1-terra）",
+      "routing": "order",
+      "members": [
+        "codex/gpt-6.1-terra:max",
+        "codex/gpt-6.1-sol:xhigh"
+      ]
+    },
+    {
+      "id": "kefu",
+      "purpose": "高可用客服/低延迟回退组",
+      "routing": "order",
+      "context": 500000,
+      "members": [
+        "opendesign/deepseek-v4.1-flash:high",
+        "factory/claude-haiku-5-5:medium",
+        "devin/deepseek-v4-1-flash:high",
+        "opencode-go/deepseek-v4.1-flash:high",
+        "commandcode-plan/deepseek/deepseek-v4.1-flash:high",
+        "codex/gpt-6.1-terra:low"
+      ]
+    }
+  ]
+}

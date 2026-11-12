@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.t3tools.powercontext-embed</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>__HOME__/powercontext-embed-eg2/.venv/bin/python</string>
+    <string>__HOME__/powercontext-embed-eg2/server.py</string>
+  </array>
+  <key>WorkingDirectory</key><string>__HOME__/powercontext-embed-eg2</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PORT</key><string>8001</string>
+    <key>EMBED_MODEL</key><string>mlx-community/embeddinggemma-2-8bit</string>
+    <key>EMBED_NAME</key><string>EmbeddingGemma-2-768</string>
+  </dict>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>__HOME__/powercontext-embed-eg2/launchd.out.log</string>
+  <key>StandardErrorPath</key><string>__HOME__/powercontext-embed-eg2/launchd.err.log</string>
+</dict>
+</plist>

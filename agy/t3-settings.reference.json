@@ -1,0 +1,55 @@
+{
+  "favorites": [
+    {
+      "provider": "antigravity",
+      "model": "gemini-4-carbon"
+    }
+  ],
+  "fastWorktreeCheckout": true,
+  "defaultAutoPull": true,
+  "defaultModelSelection": {
+    "instanceId": "antigravity",
+    "model": "gemini-4-carbon",
+    "options": [
+      {
+        "id": "thinking_level",
+        "value": "medium"
+      }
+    ]
+  },
+  "fallbackModelSelection": {
+    "instanceId": "codex",
+    "model": "gpt-6.1-sol",
+    "options": [
+      {
+        "id": "reasoningEffort",
+        "value": "medium"
+      },
+      {
+        "id": "serviceTier",
+        "value": "default"
+      }
+    ]
+  },
+  "enableAgentDeviceAccess": true,
+  "enableDeviceSupport": true,
+  "idleCompaction": "onReturn",
+  "linkedEnvironmentsEnabled": true,
+  "providerInstances": {
+    "antigravity": {
+      "driver": "antigravity",
+      "displayName": "Antigravity",
+      "enabled": true
+    },
+    "codex": {
+      "driver": "codex",
+      "displayName": "Codex",
+      "enabled": true
+    },
+    "pi": {
+      "driver": "pi",
+      "displayName": "Pi",
+      "enabled": true
+    }
+  }
+}

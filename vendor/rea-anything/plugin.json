@@ -1,0 +1,25 @@
+{
+  "name": "rea-anything",
+  "version": "6.3.0",
+  "description": "REA (Reverse Engineer Anything): 一个 MCP server 提供 139 个逆向工具，覆盖原生二进制、macOS Mach-O、.NET/托管程序、Android APK、JS/Electron、网页、EVM、ELF 布局、固件、进程行为与证据链。上游 morluto/rea（MIT）。",
+  "author": {
+    "name": "morluto (上游) | BriKing Family AI (适配)"
+  },
+  "homepage": "https://rea.tools/",
+  "repository": "https://github.com/morluto/rea",
+  "license": "MIT",
+  "keywords": [
+    "reverse-engineering",
+    "mcp",
+    "decompiler",
+    "ghidra",
+    "ida",
+    "hopper",
+    "electron",
+    "android",
+    "firmware",
+    "binary-analysis"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

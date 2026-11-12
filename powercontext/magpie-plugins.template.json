@@ -1,0 +1,23 @@
+{
+  "plugins": [
+    { "spec": "@magpie-community/opencode-zcode-auth@latest" },
+    { "spec": "@magpie-community/opencode-workbuddy-auth@latest" },
+    { "spec": "@magpie-community/opencode-zen-free-auth@latest" },
+    { "spec": "@magpie-community/opencode-minimax-auth@latest" },
+    { "spec": "@magpie-community/opencode-qoder-auth@latest" },
+    { "spec": "@magpie-community/opencode-commandcode-auth@latest" },
+    { "spec": "@magpie-community/opencode-opendesign-auth@latest" },
+    { "spec": "@magpie-community/opencode-factory-auth@latest" },
+    { "spec": "@magpie-community/opencode-trae-auth@latest" },
+    { "spec": "@magpie-community/opencode-kiro-auth@latest" },
+    { "spec": "@magpie-community/opencode-devin-auth@latest" },
+    { "spec": "@magpie-community/opencode-antigravity-auth@latest" },
+    {
+      "spec": "@magpie-community/gateway-powercontext@latest",
+      "options": {
+        "capture": true,
+        "serverUrl": "http://127.0.0.1:17429"
+      }
+    }
+  ]
+}

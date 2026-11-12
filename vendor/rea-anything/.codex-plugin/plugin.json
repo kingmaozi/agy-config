@@ -1,0 +1,28 @@
+{
+  "name": "rea-anything",
+  "version": "6.3.0",
+  "description": "REA (Reverse Engineer Anything): 139 个逆向 MCP 工具 + 逆向技能规程，覆盖原生二进制、Mach-O、.NET、APK、JS/Electron、网页、EVM、ELF、固件与进程行为。",
+  "author": {
+    "name": "morluto (上游) | BriKing Family AI (适配)"
+  },
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "REA Anything",
+    "shortDescription": "一个 MCP 打通的逆向工作台：二进制、应用、运行时的证据级分析。",
+    "longDescription": "REA (Reverse Engineer Anything) 通过 MCP 暴露 139 个逆向工具：原生二进制伪代码/汇编/交叉引用（Ghidra、IDA、Hopper 自动驱动）、macOS Mach-O 与签名/plist/Asset Catalog、.NET 托管程序元数据与 NativeAOT 边界、Android APK 清单与类/方法引用、JavaScript/Electron 模块与 IPC 追踪、网页与浏览器运行时观测、EVM 接口、离线 ELF 布局、固件区域与提取、进程行为捕获，以及 compare_/trace_/verify_ 系列证据链与 bundle 导出。配套 reverse-engineer-anything 技能负责目标路由与证据纪律。静态 JS/.NET/归档分析无需原生引擎即可使用；命命级反汇编需 Hopper/Ghidra/IDA。上游 MIT。",
+    "developerName": "morluto / BriKing Family AI",
+    "category": "逆向工具",
+    "capabilities": [
+      "Skills",
+      "MCP"
+    ],
+    "websiteURL": "https://rea.tools/",
+    "defaultPrompt": [
+      "用 REA 分析这个 App 的某个功能是怎么实现的，给出证据。",
+      "逆向这个原生二进制，看 search 功能的关键函数伪代码。",
+      "追踪这个 Electron 应用的剪贴板 IPC 链路。"
+    ],
+    "brandColor": "#5C4EE5"
+  }
+}

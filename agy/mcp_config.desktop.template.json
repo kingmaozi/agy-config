@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "lcu": {
+      "command": "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node",
+      "args": [
+        "__HOME__/.local/share/lcu/proxy/antigravity-cua.mjs"
+      ]
+    },
+    "context7": {
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "rea_anything": {
+      "command": "/bin/sh",
+      "args": [
+        "__HOME__/plugins/rea-anything/mcp/launch.sh"
+      ],
+      "env": {
+        "HOME": "__HOME__",
+        "PATH": "/opt/homebrew/bin:__HOME__/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+      }
+    },
+    "powercontext": {
+      "url": "http://127.0.0.1:17429/mcp/"
+    }
+  }
+}
