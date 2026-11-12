@@ -3,9 +3,9 @@
 我的 **T3 Code + Antigravity（AGY 主脑）+ Magpie + PowerContext（完整版项目记忆）** 全局配置包：
 包含 **六大子智能体硬编码分配规则**、**已装插件与 MCP 配置**、**全部 42 个 Skills 完整实体文件**、**PowerContext 1.5.1 终极防坑配置与本地 Apple Silicon 免费向量服务**。
 
-目标：换新电脑后 `gh repo clone` + 一条命令原地还原（与 [`kingmaozi/codex-config`](https://github.com/kingmaozi/codex-config) 配对使用，构成完整的双引擎工作台）。
+目标：换新电脑或分享给家人朋友后，`git clone` + 一条命令原地还原（本人机器还可搭配私有仓 `kingmaozi/codex-config` 同步 Codex CLI 个性化配置）。
 
-> **安全声明（私有仓库）**：仓内不含任何 API Key、Token、Cookie、`auth.json`、邮箱或业务数据库。所有敏感字段均已替换为 `<REDACTED>`，路径均已模板化为 `__HOME__` / `__T3_AGY_DIR__`，由安装脚本自动按新电脑环境渲染。
+> **开源与安全声明（MIT License）**：仓内不含任何 API Key、Token、Cookie、`auth.json`、邮箱或业务数据库。所有敏感字段均已替换为 `<REDACTED>`，路径均已模板化为 `__HOME__` / `__T3_AGY_DIR__`；安装脚本会自动按当前电脑实际已装组件启用对应 MCP（缺少私有插件时自动跳过不报错，开箱即用）。
 
 ---
 
@@ -16,31 +16,31 @@
 | [`agy/rules/AGENTS.md`](agy/rules/AGENTS.md) | 全局规则真源（T3 六大子代理路由 + 防递归护栏 + PowerContext 记忆规则）→ 同步至 T3 AGY 与 `~/.gemini/GEMINI.md` |
 | [`agy/skills/`](agy/skills/) | **19 个默认常驻核心 Skills 完整源码**（含 `t3-subagent-routing`、`powercontext-memory/scripts/pc.mjs`、`cdp-inject`、`ponytail` 等，保持提示词精简） |
 | [`agy/optional-skills/`](agy/optional-skills/) | **23 个按需开启的扩展 Skills 完整源码**（Superpowers 全流程、GitHub PR 套件、PPT/Remotion 等，`--all-skills` 一键全开） |
-| [`agy/mcp_config.t3.template.json`](agy/mcp_config.t3.template.json) | T3 下 AGY 的 6 个 MCP 服务配置模板（`briking_agent_reach`、`codegraph`、`lcu`、`context7`、`rea_anything`、`powercontext`） |
+| [`agy/mcp_config.t3.template.json`](agy/mcp_config.t3.template.json) | T3 下 AGY 的 6 个 MCP 服务配置模板（自动探测本机依赖按需挂载） |
 | [`agy/mcp_config.desktop.template.json`](agy/mcp_config.desktop.template.json) | 独立桌面端 Antigravity 的 MCP 配置模板 |
 | [`agy/t3-settings.reference.json`](agy/t3-settings.reference.json) | T3 Code 默认模型与多宿主（`antigravity` / `codex` / `pi`）参考配置 |
 | [`docs/SUBAGENTS.md`](docs/SUBAGENTS.md) | **六大子智能体分配详解**（路由表、标准 `delegate_task` JSON、防递归与复审闭环） |
 | [`docs/PLUGINS.md`](docs/PLUGINS.md) | **已装插件全清单**（MCP 插件 + AGY 桌面市场插件 + Magpie 网关插件） |
 | [`docs/SKILLS.md`](docs/SKILLS.md) | **42 个 Skills 分类说明与触发场景** |
 | [`powercontext/`](powercontext/README.md) | **PowerContext 1.5.1 完整版方案**：调优 `.env` 模板（`180k` 长对话防卡死 + 具名 Key 防死循环）、本地 MLX `EmbeddingGemma-2-768` 服务源码、Magpie 模型组配置、单项目接入脚本套件 |
-| [`vendor/`](vendor/) | 本机无公开远程源的轻量组件：`rea-anything`（已剥离 `node_modules`）与 `lcu` 桌面桥接脚本 |
-| [`scripts/install.sh`](scripts/install.sh) | 一键备份并还原 AGY 全局规则、42 个 Skills、Vendor 插件与 MCP 配置 |
+| [`vendor/`](vendor/) | 随仓附带的开源/桥接组件：`rea-anything`（已剥离 `node_modules`）与 `lcu` 桌面桥接脚本 |
+| [`scripts/install.sh`](scripts/install.sh) | 一键备份并还原 AGY 全局规则、Skills、Vendor 插件与自适应 MCP 配置 |
 | [`scripts/setup-powercontext.sh`](scripts/setup-powercontext.sh) | 一键部署本地 Apple Silicon 向量服务 + 安装 PowerContext `1.5.1` |
 
 ---
 
-## 新电脑快速还原（3 步到位）
+## 快速安装还原（无需权限，直接 `git clone`）
 
 ```bash
-# 1. 登录 GitHub 并克隆本仓库（建议同时克隆配对的 codex-config）
-gh auth login
-gh repo clone kingmaozi/agy-config
+# 1. 直接克隆公开仓库（无需登录私有账号）
+git clone https://github.com/kingmaozi/agy-config.git
 cd agy-config
 
-# 2. 一键还原 AGY 规则、42 个完整 Skills、MCP 与本地插件（自动先备份旧文件）
+# 2. 一键还原 AGY 规则、Skills、自适应 MCP 与本地插件（自动先备份旧文件）
 bash scripts/install.sh
+# （如果想一次性把全部 42 个 Skills 全打开，运行: bash scripts/install.sh --all-skills）
 
-# 3. 一键部署本地 MLX 向量服务 + PowerContext 1.5.1 完整版环境
+# 3. 一键部署本地免费 MLX 向量服务 + PowerContext 1.5.1 完整版环境
 bash scripts/setup-powercontext.sh
 ```
 
