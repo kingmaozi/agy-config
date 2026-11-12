@@ -111,7 +111,7 @@ backup_if_exists "${HOME}/.gemini/config/mcp_config.json" "gemini-mcp"
 cp "${REPO_ROOT}/agy/rules/AGENTS.md" "${HOME}/.gemini/config/rules/AGENTS.md"
 ln -sfn "${HOME}/.gemini/config/rules/AGENTS.md" "${HOME}/.gemini/GEMINI.md"
 
-for sk in agent-reach powercontext-memory t3-subagent-routing; do
+for sk in agent-reach powercontext-memory t3-subagent-routing ponytail ponytail-audit ponytail-review; do
   ln -sfn "${HOME}/.agents/skills/${sk}" "${HOME}/.gemini/skills/${sk}"
 done
 

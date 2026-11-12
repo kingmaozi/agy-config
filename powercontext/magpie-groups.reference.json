@@ -30,8 +30,7 @@
       "routing": "order",
       "context": 500000,
       "members": [
-        "codex/gpt-6.1-terra:high",
-        "factory/claude-haiku-5-5:max"
+        "codex/gpt-6.1-terra:high"
       ]
     },
     {
